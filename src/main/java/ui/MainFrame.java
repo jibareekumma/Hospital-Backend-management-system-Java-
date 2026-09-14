@@ -9,6 +9,7 @@ public class MainFrame extends JFrame {
 
     private CardLayout cardLayout;
     private JPanel container;
+    private User currentUser;
 
     public MainFrame() {
         setTitle("Hospital Management System");
@@ -36,8 +37,31 @@ public class MainFrame extends JFrame {
     }
 
     public void showDashboard(User user) {
-        DashboardPanel dashboardPanel = new DashboardPanel(user);
+        this.currentUser = user;
+        DashboardPanel dashboardPanel = new DashboardPanel(this, user);
         container.add(dashboardPanel, "dashboard");
         cardLayout.show(container, "dashboard");
+    }
+
+    public void showPatientList() {
+        PatientListPanel patientListPanel = new PatientListPanel(this);
+        container.add(patientListPanel, "patientList");
+        cardLayout.show(container, "patientList");
+    }
+
+    public void showPatientForm(model.Patient patient) {
+        PatientFormPanel patientFormPanel = new PatientFormPanel(this, patient);
+        container.add(patientFormPanel, "patientForm");
+        cardLayout.show(container, "patientForm");
+    }
+
+    public void showPatientProfile(int patientId) {
+        PatientProfilePanel patientProfilePanel = new PatientProfilePanel(this, patientId);
+        container.add(patientProfilePanel, "patientProfile");
+        cardLayout.show(container, "patientProfile");
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }

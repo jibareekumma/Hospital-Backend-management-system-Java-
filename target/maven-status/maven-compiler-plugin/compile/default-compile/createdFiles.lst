@@ -1,8 +1,15 @@
+ui/PatientFormPanel.class
+ui/MainFrame.class
+dao/PatientDAO.class
 Main.class
 ui/LoginPanel.class
-ui/MainFrame.class
+ui/PatientListPanel.class
 ui/DashboardPanel.class
+ui/PatientListPanel$1.class
 dao/UserDAO.class
 model/User.class
+ui/PatientProfilePanel.class
+ui/PatientProfilePanel$1.class
 ui/SignupPanel.class
+model/Patient.class
 db/DatabaseConnection.class

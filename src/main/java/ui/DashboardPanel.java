@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class DashboardPanel extends JPanel {
 
-    public DashboardPanel(User user) {
+    public DashboardPanel(MainFrame mainFrame, User user) {
         setLayout(new BorderLayout());
 
         JPanel topPanel = new JPanel(new GridLayout(3, 1));
@@ -26,5 +26,13 @@ public class DashboardPanel extends JPanel {
         topPanel.add(roleLabel);
 
         add(topPanel, BorderLayout.NORTH);
+
+        JPanel menuPanel = new JPanel(new GridLayout(0, 1, 10, 10));
+        JButton patientsButton = new JButton("Manage Patients");
+        menuPanel.add(patientsButton);
+
+        add(menuPanel, BorderLayout.CENTER);
+
+        patientsButton.addActionListener(e -> mainFrame.showPatientList());
     }
 }

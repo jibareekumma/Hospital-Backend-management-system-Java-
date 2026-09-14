@@ -1,8 +1,13 @@
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/Main.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/PatientDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/UserDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/db/DatabaseConnection.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Patient.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/User.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/DashboardPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/LoginPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/MainFrame.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/PatientFormPanel.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/PatientListPanel.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/PatientProfilePanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/SignupPanel.java
