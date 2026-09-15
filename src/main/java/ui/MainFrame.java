@@ -64,4 +64,28 @@ public class MainFrame extends JFrame {
     public User getCurrentUser() {
         return currentUser;
     }
+
+    public void showStaffList() {
+    StaffListPanel staffListPanel = new StaffListPanel(this);
+    container.add(staffListPanel, "staffList");
+    cardLayout.show(container, "staffList");
+}
+
+public void showStaffForm(model.Staff staff) {
+    StaffFormPanel staffFormPanel = new StaffFormPanel(this, staff);
+    container.add(staffFormPanel, "staffForm");
+    cardLayout.show(container, "staffForm");
+}
+
+public void showStaffProfile(int staffId) {
+    StaffProfilePanel staffProfilePanel = new StaffProfilePanel(this, staffId);
+    container.add(staffProfilePanel, "staffProfile");
+    cardLayout.show(container, "staffProfile");
+}
+
+public void showStaffAccount(int staffId) {
+    StaffAccountPanel staffAccountPanel = new StaffAccountPanel(this, staffId);
+    container.add(staffAccountPanel, "staffAccount");
+    cardLayout.show(container, "staffAccount");
+}
 }

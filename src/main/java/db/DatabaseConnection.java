@@ -61,6 +61,20 @@ public class DatabaseConnection {
                 "FOREIGN KEY (patient_id) REFERENCES patients(id)" +
                 ")";
 
+
+        String staff = "CREATE TABLE IF NOT EXISTS staff (" +
+        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        "first_name TEXT NOT NULL," +
+        "last_name TEXT NOT NULL," +
+        "role TEXT NOT NULL," +
+        "department TEXT," +
+        "phone TEXT," +
+        "email TEXT," +
+        "username TEXT UNIQUE," +
+        "password TEXT," +
+        "status TEXT DEFAULT 'Active'" +
+        ")";
+
         try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
             stmt.execute(users);
             stmt.execute(patients);

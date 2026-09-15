@@ -34,5 +34,9 @@ public class DashboardPanel extends JPanel {
         add(menuPanel, BorderLayout.CENTER);
 
         patientsButton.addActionListener(e -> mainFrame.showPatientList());
+
+        JButton staffButton = new JButton("Manage Staff");
+        menuPanel.add(staffButton);
+        staffButton.addActionListener(e -> mainFrame.showStaffList());
     }
 }
