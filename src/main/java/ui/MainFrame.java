@@ -88,4 +88,16 @@ public void showStaffAccount(int staffId) {
     container.add(staffAccountPanel, "staffAccount");
     cardLayout.show(container, "staffAccount");
 }
+
+public void showAppointmentList() {
+    AppointmentListPanel appointmentListPanel = new AppointmentListPanel(this);
+    container.add(appointmentListPanel, "appointmentList");
+    cardLayout.show(container, "appointmentList");
+}
+
+public void showAppointmentForm(model.Appointment appointment) {
+    AppointmentFormPanel appointmentFormPanel = new AppointmentFormPanel(this, appointment);
+    container.add(appointmentFormPanel, "appointmentForm");
+    cardLayout.show(container, "appointmentForm");
+}
 }

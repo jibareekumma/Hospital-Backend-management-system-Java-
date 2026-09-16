@@ -79,10 +79,20 @@ public class DatabaseConnection {
             stmt.execute(users);
             stmt.execute(patients);
             stmt.execute(appointments);
+            addColumnIfMissing(stmt, "appointments", "doctor_id", "INTEGER");
+            addColumnIfMissing(stmt, "appointments", "appointment_time", "TEXT");
+            addColumnIfMissing(stmt, "appointments", "reason", "TEXT");
             stmt.execute(prescriptions);
             stmt.execute(medicalHistory);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    private static void addColumnIfMissing(Statement stmt, String table, String column, String definition) {
+    try {
+        stmt.execute("ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition);
+    } catch (SQLException ignored) {
+    }
+}
 }

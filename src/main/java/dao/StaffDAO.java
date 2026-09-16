@@ -177,4 +177,18 @@ public class StaffDAO {
                 rs.getString("status")
         );
     }
+
+    public List<Staff> getStaffByRole(String role) {
+    List<Staff> results = new ArrayList<>();
+    String sql = "SELECT * FROM staff WHERE role = ?";
+    try (Connection conn = DatabaseConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        pstmt.setString(1, role);
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) results.add(mapRow(rs));
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return results;
+}
 }
