@@ -6,7 +6,6 @@ import dao.StaffDAO;
 import model.Appointment;
 import model.Patient;
 import model.Staff;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;

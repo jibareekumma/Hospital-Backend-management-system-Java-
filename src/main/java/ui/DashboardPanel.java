@@ -50,5 +50,14 @@ public class DashboardPanel extends JPanel {
         JButton clinicalButton = new JButton("Clinical Management");
 menuPanel.add(clinicalButton);
 clinicalButton.addActionListener(e -> mainFrame.showClinicalList());
+
+
+JButton labButton = new JButton("Laboratory Services");
+menuPanel.add(labButton);
+labButton.addActionListener(e -> mainFrame.showLabList());
+
+JButton pharmacyButton = new JButton("Pharmacy Services");
+menuPanel.add(pharmacyButton);
+pharmacyButton.addActionListener(e -> mainFrame.showPrescriptionList());
     }
 }

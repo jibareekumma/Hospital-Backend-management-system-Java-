@@ -130,4 +130,40 @@ public void showClinicalForm(int patientId, model.ClinicalRecord record) {
     container.add(clinicalFormPanel, "clinicalForm");
     cardLayout.show(container, "clinicalForm");
 }
+
+public void showLabList() {
+    LabListPanel labListPanel = new LabListPanel(this);
+    container.add(labListPanel, "labList");
+    cardLayout.show(container, "labList");
+}
+
+public void showLabOrderForm(int patientId) {
+    LabOrderFormPanel labOrderFormPanel = new LabOrderFormPanel(this, patientId);
+    container.add(labOrderFormPanel, "labOrderForm");
+    cardLayout.show(container, "labOrderForm");
+}
+
+public void showLabResultForm(int testId) {
+    LabResultFormPanel labResultFormPanel = new LabResultFormPanel(this, testId);
+    container.add(labResultFormPanel, "labResultForm");
+    cardLayout.show(container, "labResultForm");
+}
+
+public void showPrescriptionList() {
+    PrescriptionListPanel prescriptionListPanel = new PrescriptionListPanel(this);
+    container.add(prescriptionListPanel, "prescriptionList");
+    cardLayout.show(container, "prescriptionList");
+}
+
+public void showPrescriptionForm(int patientId) {
+    PrescriptionFormPanel prescriptionFormPanel = new PrescriptionFormPanel(this, patientId);
+    container.add(prescriptionFormPanel, "prescriptionForm");
+    cardLayout.show(container, "prescriptionForm");
+}
+
+public void showInventoryPanel() {
+    InventoryPanel inventoryPanel = new InventoryPanel(this);
+    container.add(inventoryPanel, "inventoryPanel");
+    cardLayout.show(container, "inventoryPanel");
+}
 }

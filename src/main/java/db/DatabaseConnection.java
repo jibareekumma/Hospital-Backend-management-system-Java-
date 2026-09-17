@@ -84,6 +84,8 @@ public class DatabaseConnection {
             addColumnIfMissing(stmt, "appointments", "reason", "TEXT");
             addColumnIfMissing(stmt, "medical_history", "doctor_name", "TEXT");
             addColumnIfMissing(stmt, "medical_history", "notes", "TEXT");
+            addColumnIfMissing(stmt, "prescriptions", "doctor_name", "TEXT");
+            addColumnIfMissing(stmt, "prescriptions", "status", "TEXT DEFAULT 'Pending'");
             stmt.execute(prescriptions);
             stmt.execute(medicalHistory);
         } catch (SQLException e) {
@@ -116,4 +118,24 @@ String admissions = "CREATE TABLE IF NOT EXISTS admissions (" +
         "FOREIGN KEY (patient_id) REFERENCES patients(id)," +
         "FOREIGN KEY (bed_id) REFERENCES beds(id)" +
         ")";
+
+
+        String labTests = "CREATE TABLE IF NOT EXISTS lab_tests (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "patient_id INTEGER NOT NULL," +
+                "doctor_name TEXT," +
+                "test_name TEXT NOT NULL," +
+                "status TEXT DEFAULT 'Pending'," +
+                "result TEXT," +
+                "date_ordered TEXT," +
+                "date_completed TEXT," +
+                "FOREIGN KEY (patient_id) REFERENCES patients(id)" +
+                ")";
+
+        String inventory = "CREATE TABLE IF NOT EXISTS inventory (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "drug_name TEXT UNIQUE NOT NULL," +
+                "quantity INTEGER DEFAULT 0," +
+                "reorder_level INTEGER DEFAULT 10" +
+                ")";
 }
