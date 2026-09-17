@@ -166,4 +166,24 @@ public void showInventoryPanel() {
     container.add(inventoryPanel, "inventoryPanel");
     cardLayout.show(container, "inventoryPanel");
 }
+
+
+
+public void showAdminDashboard() {
+    AdminDashboardPanel adminDashboardPanel = new AdminDashboardPanel(this);
+    container.add(adminDashboardPanel, "adminDashboard");
+    cardLayout.show(container, "adminDashboard");
+}
+
+public void showDepartmentPanel() {
+    DepartmentPanel departmentPanel = new DepartmentPanel(this);
+    container.add(departmentPanel, "departmentPanel");
+    cardLayout.show(container, "departmentPanel");
+}
+
+public void showUserAccountPanel() {
+    UserAccountPanel userAccountPanel = new UserAccountPanel(this);
+    container.add(userAccountPanel, "userAccountPanel");
+    cardLayout.show(container, "userAccountPanel");
+}
 }

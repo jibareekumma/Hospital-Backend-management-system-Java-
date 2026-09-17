@@ -61,64 +61,36 @@ public class DatabaseConnection {
                 "FOREIGN KEY (patient_id) REFERENCES patients(id)" +
                 ")";
 
-
         String staff = "CREATE TABLE IF NOT EXISTS staff (" +
-        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-        "first_name TEXT NOT NULL," +
-        "last_name TEXT NOT NULL," +
-        "role TEXT NOT NULL," +
-        "department TEXT," +
-        "phone TEXT," +
-        "email TEXT," +
-        "username TEXT UNIQUE," +
-        "password TEXT," +
-        "status TEXT DEFAULT 'Active'" +
-        ")";
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "first_name TEXT NOT NULL," +
+                "last_name TEXT NOT NULL," +
+                "role TEXT NOT NULL," +
+                "department TEXT," +
+                "phone TEXT," +
+                "email TEXT," +
+                "username TEXT UNIQUE," +
+                "password TEXT," +
+                "status TEXT DEFAULT 'Active'" +
+                ")";
 
-        try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
-            stmt.execute(users);
-            stmt.execute(patients);
-            stmt.execute(appointments);
-            addColumnIfMissing(stmt, "appointments", "doctor_id", "INTEGER");
-            addColumnIfMissing(stmt, "appointments", "appointment_time", "TEXT");
-            addColumnIfMissing(stmt, "appointments", "reason", "TEXT");
-            addColumnIfMissing(stmt, "medical_history", "doctor_name", "TEXT");
-            addColumnIfMissing(stmt, "medical_history", "notes", "TEXT");
-            addColumnIfMissing(stmt, "prescriptions", "doctor_name", "TEXT");
-            addColumnIfMissing(stmt, "prescriptions", "status", "TEXT DEFAULT 'Pending'");
-            stmt.execute(prescriptions);
-            stmt.execute(medicalHistory);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+        String beds = "CREATE TABLE IF NOT EXISTS beds (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "bed_number TEXT NOT NULL," +
+                "ward TEXT NOT NULL," +
+                "status TEXT DEFAULT 'Available'" +
+                ")";
 
-    private static void addColumnIfMissing(Statement stmt, String table, String column, String definition) {
-    try {
-        stmt.execute("ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition);
-    } catch (SQLException ignored) {
-    }
-}
-
-
-    String beds = "CREATE TABLE IF NOT EXISTS beds (" +
-        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-        "bed_number TEXT NOT NULL," +
-        "ward TEXT NOT NULL," +
-        "status TEXT DEFAULT 'Available'" +
-        ")";
-
-String admissions = "CREATE TABLE IF NOT EXISTS admissions (" +
-        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-        "patient_id INTEGER NOT NULL," +
-        "bed_id INTEGER NOT NULL," +
-        "admission_date TEXT," +
-        "discharge_date TEXT," +
-        "status TEXT DEFAULT 'Admitted'," +
-        "FOREIGN KEY (patient_id) REFERENCES patients(id)," +
-        "FOREIGN KEY (bed_id) REFERENCES beds(id)" +
-        ")";
-
+        String admissions = "CREATE TABLE IF NOT EXISTS admissions (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "patient_id INTEGER NOT NULL," +
+                "bed_id INTEGER NOT NULL," +
+                "admission_date TEXT," +
+                "discharge_date TEXT," +
+                "status TEXT DEFAULT 'Admitted'," +
+                "FOREIGN KEY (patient_id) REFERENCES patients(id)," +
+                "FOREIGN KEY (bed_id) REFERENCES beds(id)" +
+                ")";
 
         String labTests = "CREATE TABLE IF NOT EXISTS lab_tests (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -138,4 +110,42 @@ String admissions = "CREATE TABLE IF NOT EXISTS admissions (" +
                 "quantity INTEGER DEFAULT 0," +
                 "reorder_level INTEGER DEFAULT 10" +
                 ")";
+
+        String departments = "CREATE TABLE IF NOT EXISTS departments (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "name TEXT UNIQUE NOT NULL," +
+                "description TEXT" +
+                ")";
+
+        try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
+            stmt.execute(users);
+            stmt.execute(patients);
+            stmt.execute(appointments);
+            stmt.execute(prescriptions);
+            stmt.execute(medicalHistory);
+            stmt.execute(staff);
+            stmt.execute(beds);
+            stmt.execute(admissions);
+            stmt.execute(labTests);
+            stmt.execute(inventory);
+            stmt.execute(departments);
+
+            addColumnIfMissing(stmt, "appointments", "doctor_id", "INTEGER");
+            addColumnIfMissing(stmt, "appointments", "appointment_time", "TEXT");
+            addColumnIfMissing(stmt, "appointments", "reason", "TEXT");
+            addColumnIfMissing(stmt, "medical_history", "doctor_name", "TEXT");
+            addColumnIfMissing(stmt, "medical_history", "notes", "TEXT");
+            addColumnIfMissing(stmt, "prescriptions", "doctor_name", "TEXT");
+            addColumnIfMissing(stmt, "prescriptions", "status", "TEXT DEFAULT 'Pending'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void addColumnIfMissing(Statement stmt, String table, String column, String definition) {
+        try {
+            stmt.execute("ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition);
+        } catch (SQLException ignored) {
+        }
+    }
 }

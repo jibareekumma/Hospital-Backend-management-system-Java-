@@ -1,6 +1,8 @@
 dao/BedDAO.class
 ui/PatientFormPanel.class
+model/Department.class
 ui/BedAdmissionFormPanel.class
+ui/AdminDashboardPanel.class
 dao/InventoryDAO.class
 dao/PharmacyDAO.class
 ui/PrescriptionFormPanel.class
@@ -19,7 +21,9 @@ ui/AppointmentFormPanel.class
 ui/StaffFormPanel.class
 ui/StaffAccountPanel.class
 ui/PrescriptionListPanel.class
+ui/DepartmentPanel.class
 model/InventoryItem.class
+ui/UserAccountPanel.class
 ui/StaffListPanel$1.class
 dao/StaffDAO.class
 ui/ClinicalFormPanel.class
@@ -41,6 +45,7 @@ ui/LabListPanel.class
 ui/PrescriptionListPanel$1.class
 ui/BedPanel$1.class
 ui/ClinicalListPanel$1.class
+dao/DepartmentDAO.class
 dao/LabDAO.class
 ui/ClinicalListPanel.class
 ui/PatientListPanel.class
@@ -48,6 +53,7 @@ ui/InventoryPanel$1.class
 ui/PatientListPanel$1.class
 model/LabTest.class
 dao/UserDAO.class
+ui/DepartmentPanel$1.class
 model/User.class
 ui/BedAdmissionListPanel.class
 ui/PatientProfilePanel.class

@@ -48,16 +48,27 @@ public class DashboardPanel extends JPanel {
         admissionsButton.addActionListener(e -> mainFrame.showAdmissionList());
 
         JButton clinicalButton = new JButton("Clinical Management");
-menuPanel.add(clinicalButton);
-clinicalButton.addActionListener(e -> mainFrame.showClinicalList());
+        menuPanel.add(clinicalButton);
+        clinicalButton.addActionListener(e -> mainFrame.showClinicalList());
 
+        JButton labButton = new JButton("Laboratory Services");
+        menuPanel.add(labButton);
+        labButton.addActionListener(e -> mainFrame.showLabList());
 
-JButton labButton = new JButton("Laboratory Services");
-menuPanel.add(labButton);
-labButton.addActionListener(e -> mainFrame.showLabList());
+        JButton pharmacyButton = new JButton("Pharmacy Services");
+        menuPanel.add(pharmacyButton);
+        pharmacyButton.addActionListener(e -> mainFrame.showPrescriptionList());
 
-JButton pharmacyButton = new JButton("Pharmacy Services");
-menuPanel.add(pharmacyButton);
-pharmacyButton.addActionListener(e -> mainFrame.showPrescriptionList());
+        JButton adminButton = new JButton("Hospital Administration");
+        menuPanel.add(adminButton);
+        adminButton.addActionListener(e -> mainFrame.showAdminDashboard());
+
+        JButton accountButton = new JButton("My Account");
+        menuPanel.add(accountButton);
+        accountButton.addActionListener(e -> mainFrame.showUserAccountPanel());
+
+        JButton logoutButton = new JButton("Logout");
+        menuPanel.add(logoutButton);
+        logoutButton.addActionListener(e -> mainFrame.showLogin());
     }
 }

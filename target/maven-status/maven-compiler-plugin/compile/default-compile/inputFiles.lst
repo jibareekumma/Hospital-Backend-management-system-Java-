@@ -3,6 +3,7 @@
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/AppointmentDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/BedDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/ClinicalDAO.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/DepartmentDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/InventoryDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/LabDAO.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/dao/PatientDAO.java
@@ -14,12 +15,14 @@
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Appointment.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Bed.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/ClinicalRecord.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Department.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/InventoryItem.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/LabTest.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Patient.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Prescription.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/Staff.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/model/User.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/AdminDashboardPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/AppointmentFormPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/AppointmentListPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/BedAdmissionFormPanel.java
@@ -28,6 +31,7 @@
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/ClinicalFormPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/ClinicalListPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/DashboardPanel.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/DepartmentPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/InventoryPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/LabListPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/LabOrderFormPanel.java
@@ -44,3 +48,4 @@
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/StaffFormPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/StaffListPanel.java
 /home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/StaffProfilePanel.java
+/home/devjibare/project-coding/MMS/Hospital-management-system/src/main/java/ui/UserAccountPanel.java
