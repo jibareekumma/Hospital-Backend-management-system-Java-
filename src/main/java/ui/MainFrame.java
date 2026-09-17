@@ -66,38 +66,68 @@ public class MainFrame extends JFrame {
     }
 
     public void showStaffList() {
-    StaffListPanel staffListPanel = new StaffListPanel(this);
-    container.add(staffListPanel, "staffList");
-    cardLayout.show(container, "staffList");
+        StaffListPanel staffListPanel = new StaffListPanel(this);
+        container.add(staffListPanel, "staffList");
+        cardLayout.show(container, "staffList");
+    }
+
+    public void showStaffForm(model.Staff staff) {
+        StaffFormPanel staffFormPanel = new StaffFormPanel(this, staff);
+        container.add(staffFormPanel, "staffForm");
+        cardLayout.show(container, "staffForm");
+    }
+
+    public void showStaffProfile(int staffId) {
+        StaffProfilePanel staffProfilePanel = new StaffProfilePanel(this, staffId);
+        container.add(staffProfilePanel, "staffProfile");
+        cardLayout.show(container, "staffProfile");
+    }
+
+    public void showStaffAccount(int staffId) {
+        StaffAccountPanel staffAccountPanel = new StaffAccountPanel(this, staffId);
+        container.add(staffAccountPanel, "staffAccount");
+        cardLayout.show(container, "staffAccount");
+    }
+
+    public void showAppointmentList() {
+        AppointmentListPanel appointmentListPanel = new AppointmentListPanel(this);
+        container.add(appointmentListPanel, "appointmentList");
+        cardLayout.show(container, "appointmentList");
+    }
+
+    public void showAppointmentForm(model.Appointment appointment) {
+        AppointmentFormPanel appointmentFormPanel = new AppointmentFormPanel(this, appointment);
+        container.add(appointmentFormPanel, "appointmentForm");
+        cardLayout.show(container, "appointmentForm");
+    }
+
+    public void showAdmissionForm() {
+        BedAdmissionFormPanel admissionFormPanel = new BedAdmissionFormPanel(this);
+        container.add(admissionFormPanel, "admissionForm");
+        cardLayout.show(container, "admissionForm");
+    }
+
+    public void showAdmissionList() {
+        BedAdmissionListPanel admissionListPanel = new BedAdmissionListPanel(this);
+        container.add(admissionListPanel, "admissionList");
+        cardLayout.show(container, "admissionList");
+    }
+
+    public void showBedPanel() {
+        BedPanel bedPanel = new BedPanel(this);
+        container.add(bedPanel, "bedPanel");
+        cardLayout.show(container, "bedPanel");
+    }
+
+    public void showClinicalList() {
+    ClinicalListPanel clinicalListPanel = new ClinicalListPanel(this);
+    container.add(clinicalListPanel, "clinicalList");
+    cardLayout.show(container, "clinicalList");
 }
 
-public void showStaffForm(model.Staff staff) {
-    StaffFormPanel staffFormPanel = new StaffFormPanel(this, staff);
-    container.add(staffFormPanel, "staffForm");
-    cardLayout.show(container, "staffForm");
-}
-
-public void showStaffProfile(int staffId) {
-    StaffProfilePanel staffProfilePanel = new StaffProfilePanel(this, staffId);
-    container.add(staffProfilePanel, "staffProfile");
-    cardLayout.show(container, "staffProfile");
-}
-
-public void showStaffAccount(int staffId) {
-    StaffAccountPanel staffAccountPanel = new StaffAccountPanel(this, staffId);
-    container.add(staffAccountPanel, "staffAccount");
-    cardLayout.show(container, "staffAccount");
-}
-
-public void showAppointmentList() {
-    AppointmentListPanel appointmentListPanel = new AppointmentListPanel(this);
-    container.add(appointmentListPanel, "appointmentList");
-    cardLayout.show(container, "appointmentList");
-}
-
-public void showAppointmentForm(model.Appointment appointment) {
-    AppointmentFormPanel appointmentFormPanel = new AppointmentFormPanel(this, appointment);
-    container.add(appointmentFormPanel, "appointmentForm");
-    cardLayout.show(container, "appointmentForm");
+public void showClinicalForm(int patientId, model.ClinicalRecord record) {
+    ClinicalFormPanel clinicalFormPanel = new ClinicalFormPanel(this, patientId, record);
+    container.add(clinicalFormPanel, "clinicalForm");
+    cardLayout.show(container, "clinicalForm");
 }
 }
